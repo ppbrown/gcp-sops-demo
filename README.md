@@ -61,5 +61,28 @@ sops -e -i mixed-data.enc.yaml
 
 That file will now have sensitive lines, and ONLY the sensitive lines, encrypted
 
+Make sure you DO NOT COMMIT THE FILE TO git BEFORE CALLING SOPS ON IT!!
+
+---
+
+# Keep calm and carry on
+
+You are now basically all set! Use git as normal. You can even edit and
+update the non-sensitive parts of the .enc file as you usually do.
+But if you need to edit anything in **ENC[xxxxxx]**  then call
+"sops thatfile.enc.yaml"
+
+It will automatically decrypt the file and invoke an $EDITOR (presuming
+your cloud credentials are current)
+
+If a program needs to access the file to use the values normally, then
+make sure it has valid cloud credentials, and then either use a SOPS library,
+or call the executable with
+
+    sops -d thatfile.enc.yaml
+
+It will dump the values to stdout, so make sure you handle the data in
+an appropriately secure manner.
+
 
 
