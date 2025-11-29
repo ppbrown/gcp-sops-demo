@@ -1,0 +1,14 @@
+top-key:
+    public_key: blah-blah?
+    api_key: ENC[AES256_GCM,data:lOIODhAD9lUZkFyvVdN61PN5CfG30mcw,iv:VyvZ7ZT7ya6GfW1pgv8GYQJjgruI6b5/jbIZ442tylk=,tag:vMolJpdm8Vn00NZjNOl/oA==,type:str]
+    password: ENC[AES256_GCM,data:XcKmtY+LOpM/NVFBTeM7af+5jKNVPUo7rFD95Jw=,iv:97+UV4fG3YFv5AmH8IM08MgSTIWCA2laJCWhFUlJ6Ss=,tag:KqKXLHc4Pq0SYwd6LjePaw==,type:str]
+    note: Just a regular note for some reason
+sops:
+    gcp_kms:
+        - resource_id: projects/bolthole-website/locations/us-west1/keyRings/sops-keyring/cryptoKeys/sops-key
+          created_at: "2025-11-29T02:37:33Z"
+          enc: CiQA96n6eGNc0GBea1c9W9PMY3i+j97O5oOACufFqqOcYv+Au80SSQBFCZclzsmxwm9YhW0PMlc21zr0nzNgqqQusSaER3gLBIKF9yeVP/uOLS9Do8/buN2ALl03qkjAZEt5db/MB0TjH+qJfA6PIew=
+    lastmodified: "2025-11-29T02:37:34Z"
+    mac: ENC[AES256_GCM,data:S90rD9fU9Vp1QpmBCHM2lCtXu+ZzHYSm/nkIPvTpujusQNAlF6N56aUjon0BKLKo2Ncwim4rz4Q/tV+dJyC/tlC/4xoDqb7+9/3Batmy7sCmOXHyggO/2hHtAusMKyR/5zxC53YiPbh1OXMLrBYuTkR3rM00kMJV/eUsTcNaE98=,iv:eHdzOrbwfuezcs5pedMVGSGrWA/KxQI74Ud/IUaa0Vs=,tag:Vz8ntCG7zljGse0f17wifA==,type:str]
+    encrypted_regex: ^(data|stringData|password|secret|api_key|token)$
+    version: 3.11.0

@@ -1,0 +1,6 @@
+creation_rules:
+  - gcp_kms: projects/bolthole-website/locations/us-west1/keyRings/sops-keyring/cryptoKeys/sops-key
+    # Which fields inside a YAML/JSON should be encrypted:
+    encrypted_regex: '^(data|stringData|password|secret|api_key|token)$'
+    # Which files get auto-encrypted by sops when created:
+    path_regex: '.*\.enc\.(yaml|yml|json)$'

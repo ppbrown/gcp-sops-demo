@@ -1,0 +1,6 @@
+
+
+top-plain:
+  fake_plain_key: "blah-blah?"
+  password: "Oops.. see what happens if you dont name files right?"
+  note: "no .enc in this filename so it isnt checked"
