@@ -4,3 +4,4 @@ top-plain:
   fake_plain_key: "blah-blah?"
   password: "Oops.. see what happens if you dont name files right?"
   note: "no .enc in this filename so it isnt checked"
+  note2: "If you even try to call sops on this file, it will give up"
