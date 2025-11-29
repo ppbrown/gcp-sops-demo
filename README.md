@@ -9,7 +9,7 @@ happens to focus on GCP.
 
 # Why use SOPS
 
-SOPS ("Secet Operations") is a useful tool that lets you keep 90% of a repo
+SOPS ("Secet Operations") is a useful tool that lets you keep 99% of a repo
 normally editable and readable, but makes sure that certain lines of certain
 files are encrypted. 
 
@@ -23,9 +23,9 @@ integration with cloud based KMS systems like GCP and AWS means that
 This repo and all required tools were set up using the steps below:
 
 ## Install SOPS
-curl -sSL https://raw.githubusercontent.com/upciti/wakemeops/main/assets/install_repository | sudo bash
+    curl -sSL https://raw.githubusercontent.com/upciti/wakemeops/main/assets/install_repository | sudo bash
 
-sudo apt install sops
+    sudo apt install sops
 
 ## Create the config .sops.yaml
 
@@ -61,7 +61,7 @@ Follow instructions at https://docs.cloud.google.com/sdk/docs/install
 
 After you have created a potential target file, run the following command:
 
-sops -e -i mixed-data.enc.yaml
+    sops -e -i mixed-data.enc.yaml
 
 That file will now have sensitive lines, and ONLY the sensitive lines, encrypted
 
@@ -74,7 +74,8 @@ Make sure you DO NOT COMMIT THE FILE TO git BEFORE CALLING SOPS ON IT!!
 You are now basically all set! Use git as normal. You can even edit and
 update the non-sensitive parts of the .enc file as you usually do.
 But if you need to edit anything in **ENC[xxxxxx]**  then call
-"sops thatfile.enc.yaml"
+
+    sops thatfile.enc.yaml
 
 It will automatically decrypt the file and invoke an $EDITOR, presuming
 your cloud credentials are current.
