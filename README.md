@@ -1,9 +1,13 @@
-# What
+# What is this repo for?
 
 This is a demo for using SOPS encrypted datafiles, in conjunction
 with an encryption key managed in Google's Cloud KMS
 
-# Why
+The instructions for using it with other backends such as AWS KMS,
+Azure, or Hashicorp Vault and others, are very similar. This guide just
+happens to focus on GCP.
+
+# Why use SOPS
 
 SOPS ("Secet Operations") is a useful tool that lets you keep 90% of a repo
 normally editable and readable, but makes sure that certain lines of certain
@@ -72,8 +76,11 @@ update the non-sensitive parts of the .enc file as you usually do.
 But if you need to edit anything in **ENC[xxxxxx]**  then call
 "sops thatfile.enc.yaml"
 
-It will automatically decrypt the file and invoke an $EDITOR (presuming
-your cloud credentials are current)
+It will automatically decrypt the file and invoke an $EDITOR, presuming
+your cloud credentials are current.
+If not, then in the case of google, you may need to do
+
+    gcloud auth application-default login
 
 If a program needs to access the file to use the values normally, then
 make sure it has valid cloud credentials, and then either use a SOPS library,
