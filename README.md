@@ -78,8 +78,10 @@ But if you need to edit anything in **ENC[xxxxxx]**  then call
     sops thatfile.enc.yaml
 
 It will automatically decrypt the file and invoke an $EDITOR, presuming
-your cloud credentials are current.
-If not, then in the case of google, you may need to do
+your cloud credentials are current. It will then automatically **reencrypt** 
+the sensitive parts of the file, so you can do a *git commit* immediately following.
+
+If you have issues with your credential, then in the case of google, you may need to do
 
     gcloud auth application-default login
 
