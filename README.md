@@ -1,7 +1,7 @@
 # What is this repo for?
 
 This is a demo for using SOPS encrypted datafiles, in conjunction
-with an encryption key managed in Google's Cloud KMS
+with an encryption key managed in **Google's Cloud KMS**
 
 The instructions for using it with other backends such as AWS KMS,
 Azure, or Hashicorp Vault and others, are very similar. This guide just
